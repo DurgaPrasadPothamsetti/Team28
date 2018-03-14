@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+header{
+    background-color: #B66562;
+    color:white;
+    text-align: center;
+    padding:1px 0 2% 0;
+        
+}
+h1{
+    margin-bottom:2px;
+}
+header a{
+    text-decoration: none;
+    color:white;
+    margin-top:0%;
+    padding:2px; 
+}
+body{
+    margin:0 ;
+    background-image:url("images/stardust.png"); 
+    font-family: 'Roboto Slab', serif;   
+}
+h2{
+    text-align: center;
+    color:#91B8AB;
+    padding:5% 0 0 0;
+}
+main{
+    background-color: white;
+    margin: 0 30% 0 30%;
+    padding:0 1% 2% 1% ;
+    
+}
+label{
+    padding: 4% 0 2% 0;
+ 
+     width:150px;
+     margin-top:10%;
+}
+#news{
+    margin-left: 5%;
+}
+input[type=submit]{
+    padding:5px;
+    font-size: 15pt; 
+}
+p{
+    color: lightgray;
+    text-align: center;
+}
+input[type=text],[type=email] {
+    width: 100%;
+    padding: 10px ;
+    margin: 8px 0;
+    border: 2px solid rgb(0, 217, 255);
+}
+textarea{
+    width: 100%;
+    margin: 8px 0;
+    border: 2px solid rgb(0, 217, 255);
+}

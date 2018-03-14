@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>width:auto</title>
+
+        <style>
+        div, #inputWrapper {
+            border: 1px solid red;
+        }
+        #topDiv {
+            padding: 5px;
+            height: 5px;
+        }
+        form {
+            display: block;
+        }
+        #inputWrapper {
+            overflow: hidden;
+            height: 15px;
+        }
+        input {
+            display: block;
+            width: 100%;
+            border-style: none;
+            padding-left: 5px;
+            padding-right: 5px;
+            height: 15px;
+        }
+        </style>
+    </head>
+
+    <body>
+        <div id="topDiv"></div>
+        <form>
+          <div id="inputWrapper">
+            <input type="text" name="foo" />
+          </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>index</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        $(window).on('resize orientationChange', function(event) {
+            var width = $(window).width();
+            var height = $(window).height();
+            $("p").text(width +"*" + height);
+        });
+    })
+</script>
+    <body>
+        <span>Reize the window to see the ouput</span>
+        <p></p>
+    </body>
+</html>

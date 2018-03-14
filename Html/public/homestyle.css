@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+header{
+    background-color: #B66562;
+    color:white;
+    text-align: center;
+    padding:1px 0 2% 0;
+}
+h1{
+    margin-bottom:2px;
+}
+header a{
+    text-decoration: none;
+    color:white;
+    margin-top:0%;
+    padding:2px; 
+}
+body{
+    margin:0 ;
+    background-image:url("images/stardust.png");
+    font-family: 'Roboto Slab', serif;    
+}
+h3 a{
+    color:white;
+}
+#midsection{
+    background-color: white;
+    margin: 0 30% 0 30%;
+    padding:0 1% 2% 1% ;
+}
+#fea{
+    background-color: 	#323131;
+    color:white;
+    padding:0.5em;
+    margin-bottom: 0%;
+    margin-right:20s%; 
+}
+p{
+    margin-top:0%;
+    text-align:center;
+    color:lightgrey;
+    padding:1%;
+
+}
+img{
+   width:100%;
+   height:auto;
+    margin-top:1px;  
+}
+#home{
+    text-align:center;
+    color: 	#91B8AB;
+    padding:3% 0 0 0; 
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="8.js"></script>
+</head>
+<body>
+    <form style="margin:3% 0 0% 35% ">
+        <div class="alert alert-danger" style="width:30%">
+            <ul id="errors">
+                
+            </ul>
+        </div>
+        <div class="form-group">
+            <label for="fstname">First Name :</label>
+            <input type="text" class="form-control" id="fstname" style="width:30%" required>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name :</label>
+            <input type="text" class="form-control" id="lastname" style="width:30%" required>
+        </div>
+        <div class="form-group">
+            <label for="username">userame :</label>
+            <input type="text" class="form-control" id="username" style="width:30%" required>
+        </div>
+        <div class="form-group">
+            <label for="pass">password :</label>
+            <input type="password" class="form-control" id="pass" style="width:30%" required>
+        </div>
+        <input type="radio" name="gender" value="male" checked> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br><br>
+        <div class="form-group">
+            <label for="res">Registration Number :</label>
+            <input type="text" class="form-control" id="res" style="width:30%" required>
+        </div>
+        <div class="form-group">
+            <label for="date">DOB :</label>
+            <input type="date" class="form-control" id="date" value="dd/mm/year" style="width:15%">
+        </div>
+        <div class="form-group">
+            <label for="add">Address :</label>
+            <textarea rows="4" cols="50" class="form-control" id="add" style="width:30%"> </textarea> 
+        </div>
+        <div class="form-group">
+            <label for="zip">Zipcode :</label>
+            <input type="text" class="form-control" id="zip" style="width:30%" maxlength="6" required>
+        </div>
+        <div class="form-group">
+            <label for="Avg">Average Marks :</label>
+            <input type="text" class="form-control" id="avg" style="width:30%" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email :</label>
+            <input type="email" class="form-control" id="email" style="width:30%" required>
+        </div>
+        <input type="submit" id="submit" class="btn btn-default">
+    </form>
+</body>
+
+</html>

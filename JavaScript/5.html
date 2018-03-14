@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>index</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<script>
+    $(document).ready(function(){
+        var cc=0;
+        $("p").click(function(){
+           cc = cc+1;
+            if(cc==2){
+            $("p").text("Talasila");
+            cc=0;
+            }
+        })
+    })
+</script>
+<body>
+    <p>Sri Ram </p>
+</body>
+</html>

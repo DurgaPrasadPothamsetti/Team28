@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE orderform [
+<!ELEMENT orderform (customer,product*)>
+<!ELEMENT customer (name,address,tel)> 
+<!ELEMENT name (#PCDATA)>                 
+<!ELEMENT address (#PCDATA)>              
+<!ELEMENT tel (portable | home)>       
+<!ELEMENT portable (#PCDATA)>          
+<!ELEMENT home (#PCDATA)>             
+<!ELEMENT product (product_name,num)>    
+<!ELEMENT product_name (#PCDATA)>        
+<!ELEMENT num (#PCDATA)>                 
+]>
+<orderform>
+ <customer>
+   <name>Sriram</name>
+  <address>Bhimavram</address>
+  <tel>
+   <mobile>9133623339</mobile>
+   <home>9160099596</home>
+  </tel>
+ </customer>
+ <product>
+  <product_name>washing machine</product_name>
+  <number>1</number>
+ </product>
+ <product>
+  <product_name>television</product_name>
+  <number>2</number>
+ </product>
+</orderform>

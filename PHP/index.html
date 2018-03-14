@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+   <title>Bussiness</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+   <script type="text/javascript" src="javascript/Chart.min.js"></script>
+   <script type="text/javascript" src="javascript/chart.js"></script>
+   <script type="text/javascript" src="javascript/managetd.js"></script>
+   </script>
+   <style>
+      html,
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+      font-family: "Raleway", sans-serif
+      }
+      .hidden{
+      display: none;
+      }
+      #chart-container {
+				width: 640px;
+				height: auto;
+			}
+   </style>
+   <body class="w3-light-grey">
+      <!-- Top container -->
+      <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+         <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();">
+         <i class="fa fa-bars"></i>  Menu</button>
+         <span class="w3-bar-item w3-right">Store Inventory Management system</span>
+      </div>
+      <!-- Sidebar/menu -->
+      <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar">
+         <br>
+         <div class="w3-container w3-row">
+
+            <div class="w3-col s8 w3-bar">
+               <span>Welcome,
+               </span>
+               <br>
+          </div>
+         </div>
+         <hr>
+         <div class="w3-container">
+            <h5>Dashboard</h5>
+         </div>
+         <div class="w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu">
+            <i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+            <div id="menu">
+               <a href="#" id="st" class="w3-bar-item w3-button w3-padding w3-blue" onclick="w3_close()">
+               <i class="fa fa-users fa-fw"></i>  Overview</a>
+               <a href="#" id="ud" class="w3-bar-item w3-button w3-padding " onclick="w3_close()">
+               <i class="fa fa-arrow-up"></i>  Update Quantity</a>
+            </div>
+            <br>
+            <br>
+         </div>
+      </nav>
+      <!-- Overlay effect when opening sidebar on small screens -->
+      <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+         id="myOverlay"></div>
+      <!-- !PAGE CONTENT! -->
+      <div class="w3-main" style="margin-left:300px;margin-top:43px;">
+         <!-- Header -->
+         <hr>
+         <div id="stat" class="w3-container ">
+            <h5>General Stats</h5>
+            <p>This Month</p>
+            <div id="chart-container">
+			           <canvas id="mycanvas"></canvas>
+		        </div>
+         </div>
+         <div id="tb"class="w3-container">
+            <div class="w3-dropdown-hover">
+               <button class="w3-button">select One</button>
+               <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                  <p class="w3-bar-item w3-button" id="udstock">Update stock</p>
+                  <p class="w3-bar-item w3-button" id="udsales">update today sales</p>
+               </div>
+            </div>
+            <button id="addit"class="w3-button">Add Item</button>
+            <form class="w3-container hidden">
+               <label for="prouductn">Product Name</label>
+               <input type="text" class="w3-input w3-animate-input"  id="prouductn" style="width:30%" name="" value=""><br>
+               <label for="qut">Quantity</label>
+               <input type="text" class="w3-input w3-animate-input" id="qut" name="" style="width:30%" value=""><br>
+               <label for="prce">Price</label>
+               <input type="text" class="w3-input w3-animate-input"  id="prce" name="" style="width:30%" value="">
+               <input type="button" id="addata" value="ADD">
+            </form>
+            <div id="updatetable" class="hidden">
+               <p>Items:</p>
+               <table  class="w3-table w3-bordered ">
+                  <tr id>
+                     <th>id</th>
+                     <th>productname</th>
+                     <th>quantity</th>
+                     <th>price</th>
+                     <th id="op"></th>
+                  </tr>
+                  <tbody id="addtable">
+                  </tbody>
+               </table>
+               <button  style="float:right" type="button" id="submit" name="button">submit</button>
+            </div>
+
+         </div>
+      </div>
+      <hr>
+      <br>
+      <hr>
+
+      <!-- End page content -->
+      </div>
+      <script>
+         $('#tb').addClass('hidden');
+         // highlighting buttons in menu
+          $('#menu a').on('click', function(){
+            $(' a.w3-blue').removeClass('w3-blue');
+            $(this).addClass('w3-blue');
+          });
+          //changing main page content
+          $("#st").on('click', function(){
+            $('#stat').removeClass('hidden');
+            $('#tb').addClass('hidden');
+          })
+          $("#ud").on('click', function(){
+            $('#tb').removeClass('hidden');
+            $('#stat').addClass('hidden');
+          })
+          //show add item format
+          $("#addit").on('click', function(){
+            $('form').removeClass('hidden');
+            if (!($("#updatetable").hasClass("hidden")))
+                $("#updatetable").addClass("hidden");
+          })
+
+            // Get the Sidebar
+            var mySidebar = document.getElementById("mySidebar");
+            // Get the DIV with overlay effect
+            var overlayBg = document.getElementById("myOverlay");
+
+            // Toggle between showing and hiding the sidebar, and add overlay effect
+            function w3_open() {
+              if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+                overlayBg.style.display = "none";
+              } else {
+                mySidebar.style.display = 'block';
+                overlayBg.style.display = "block";
+              }
+            }
+
+            // Close the sidebar with the close button
+            function w3_close() {
+              mySidebar.style.display = "none";
+              overlayBg.style.display = "none";
+            }
+      </script>
+   </body>
+</html>

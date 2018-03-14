@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>index</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        $("#number").keyup(function () {
+            var n = $("#number").val();
+            var c = 0;
+            for (var i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i == 0) {
+                    $("p").text('Is Not a Prime Number');
+                    c = 1;
+                    break;
+                }
+            }
+            if (c != 1) {
+                $("p").text('Is a Prime Number');
+            }
+
+        })
+    })
+</script>
+
+<body>
+    <div style='padding:25% 40% 40% 25%'>
+        <label for="number">Enter the number</label>
+        <input id="number" type="text">
+        <p id="result"></p>
+    </div>
+</body>
+
+</html>

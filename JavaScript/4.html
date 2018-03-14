@@ -1,0 +1,20 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>index</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<script>
+    $(document).ready(function(){
+        $("#te").focusout(function(){
+            var text = $("#te").val();
+            $("#te").val(text.toUpperCase());
+        })
+    })
+</script>
+<body>
+    <label for="te">Enter the Text:</label>
+    <input type="text" id="te">
+</body>
+</html>
